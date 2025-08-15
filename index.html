@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mouse & Chairs — Local Simulation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="title">
+        <h1>Мышь: фиксированная цель + цепная защита</h1>
+        <div class="subtitle">Локальная версия без зависимостей (Canvas + Vanilla JS)</div>
+      </div>
+      <div class="actions">
+        <button id="btn-toggle" class="btn primary">Пауза</button>
+        <button id="btn-restart" class="btn">Перезапуск</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="canvas-wrap">
+        <canvas id="stage" width="920" height="560"></canvas>
+      </section>
+      <section class="panel">
+        <h2>Параметры</h2>
+
+        <div class="field">
+          <label>Стулья (N)</label>
+          <input type="range" id="nChairs" min="6" max="100" value="20">
+          <span class="value" id="nChairsVal">20</span>
+        </div>
+
+        <div class="field">
+          <label>Скорость мыши</label>
+          <input type="range" id="mouseSpeed" min="60" max="360" value="190">
+          <span class="value" id="mouseSpeedVal">190 px/s</span>
+        </div>
+
+        <div class="field">
+          <label>Скорость команды</label>
+          <input type="range" id="teamSpeed" min="60" max="420" value="240">
+          <span class="value" id="teamSpeedVal">240 px/s</span>
+        </div>
+
+        <div class="field">
+          <label>Размер стула (r)</label>
+          <input type="range" id="chairRadius" min="10" max="26" value="12">
+          <span class="value" id="chairRadiusVal">12 px</span>
+        </div>
+
+        <div class="field">
+          <label>Seed</label>
+          <input type="number" id="seed" value="20250813" step="1">
+          <button id="btn-reroll" class="btn">🎲</button>
+        </div>
+
+        <div class="box">
+          <div><b>Диагностика</b></div>
+          <div>Пар пересечений: <span id="overlaps">0</span></div>
+          <div>Прошло времени: <span id="elapsed">0.0</span> s</div>
+          <div>Статус: <span id="status">playing</span></div>
+        </div>
+
+        <div class="box">
+          <div><b>Как это работает</b></div>
+          <div>Мышь фиксирует начальный «пустой» стул и идёт только к нему. Если защитник занимает его первым, цель мыши переключается на новый пустой (куда «перекатился» вакуум).</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div>Tip: увеличьте N и уменьшите r — будет плотнее и тяжелее.</div>
+      <div>© Vanilla JS build</div>
+    </footer>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
