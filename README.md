@@ -1,5 +1,11 @@
 # Mouse & Chairs — Local Simulation
 
+<p align="center">
+  <a href="https://dadkakdad.github.io/game_of_mouse/">
+    <img src="https://img.shields.io/badge/▷-Live_Demo-2ea44f?style=for-the-badge" alt="Live Demo">
+  </a>
+</p>
+
 A self-contained simulation of the "Mouse and Chairs" game using **Canvas + Vanilla JS**. This project includes a visual simulation in the browser as well as a headless test harness for strategy optimization.
 
 ## How to run
