@@ -108,4 +108,19 @@ body {
 }
 canvas {
   display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .top,
+  .foot {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
 }
