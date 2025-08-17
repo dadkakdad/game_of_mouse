@@ -26,12 +26,12 @@ This file tracks the Team strategies we experimented with, plus rough results (a
    - Require margins on first hops; forbid new vacancy much closer to Mouse.
    - Avg typically ≈ 1–3s with current geometry.
 
-7. Cordon Mode (v1)
-   - When Mouse is within R of vacancy, dispatch K defenders to surround vacancy by occupying K nearest seats to that chair, plus the vacancy itself.
-   - Configurable via `tuning.cordonR`, `tuning.cordonK`.
-   - In progress; see `simulation.mjs`.
+7. Cordon Mode (reservations)
+   - When the Mouse is within `reservedRadius` of a vacancy, reserve that chair plus its `cordonK` nearest chairs for `cordonHold` seconds.
+   - Configurable via `tuning.reservedRadius`, `tuning.cordonK`, `tuning.cordonHold`.
+   - Implemented in `simulation.mjs`.
 
 Next candidates:
-- Persistent Cordon (reserve K seats for a hold duration, reassign as needed).
+
 - Geometry-aware no-closer on every hop & guard seats.
-- Speed/geometry co-tuning (N, r, teamSpeed/mouseSpeed ratios). 
+- Speed/geometry co-tuning (N, r, teamSpeed/mouseSpeed ratios).
