@@ -2,9 +2,9 @@ export function createSimulation(config) {
   const state = {
     width: 920,
     height: 560,
-    nChairs: (config && config.nChairs) || 12,
+    nChairs: (config && config.nChairs) || 30,
     chairRadius: (config && config.chairRadius) || 16,
-    mouseSpeed: (config && config.mouseSpeed) || 190,
+    mouseSpeed: (config && config.mouseSpeed) || 150,
     teamSpeed: (config && config.teamSpeed) || 220,
     seed: (config && config.seed) || 20250813,
     running: true,
